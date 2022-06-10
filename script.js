@@ -13,7 +13,7 @@ let requisito1 = 0;//NÃO ALTERAR!
 let requisito2 = [];//NÃO ALTERAR!
 let requisito3 = [];//NÃO ALTERAR!
 let req4crescente = [];//NÃO ALTERAR!
-let req4decrscente = [];//NÃO ALTERAR!
+let req4decrescente = [];//NÃO ALTERAR!
 let requisito6 = '';//NÃO ALTERAR!
 let requisito7 = [];//NÃO ALTERAR!
 
@@ -22,83 +22,73 @@ let requisito7 = [];//NÃO ALTERAR!
 // Requisito 1
 function quantity() {
   // #Dica o metodo length é seu aliado neste caso.
-  requisito1 = //Seu código aqui
-
-
-    req1.innerHTML = `Quantidade de posições ${requisito1}`; //NÃO ALTERAR!
+  requisito1 = historicoDeResultado.length//Seu código aqui
+  req1.innerHTML = `Quantidade de posições ${requisito1}`; //NÃO ALTERAR!
 };
-
 
 // Requisito 2
 function firstLastPosition() {
   //Seu código aqui descomente para usar a estrutura declarada.
-  /*   for () {
-      requisito2 = [];
-      requisito2 = //Seu código aqui, manipule a variável sem alterar o nome dela.
-    } */
-
+  for (let i = 0 ; i < historicoDeResultado.length ; i++) {
+    requisito2 = [];
+    requisito2 = [historicoDeResultado[0], historicoDeResultado[(historicoDeResultado.length)-1]];
+    //Seu código aqui, manipule a variável sem alterar o nome dela.
+  }
   req2.innerHTML = `Primeiro e ultimo item [ ${requisito2} ]`; //NÃO ALTERAR!
 }
-
 
 // Requisito 3
 function pushMethod() {
   const date = new Date(); //NÃO ALTERAR! Está linha pega a data completa de hoje. 
   const anoAtual = date.getFullYear();//NÃO ALTERAR! Formata a linha acima e pega só o ANO 2022 . 
-  
-  requisito3 //Seu código aqui, manipule a variável sem alterar o nome dela.
-
-
+  requisito3.push(anoAtual)//Seu código aqui, manipule a variável sem alterar o nome dela.
   req3.innerHTML = `push [ ${requisito3} ]`; //NÃO ALTERAR!
 }
 
 
 // Requisito 4
 function sortMethod() {
-  let sortCrescente = req4crescente; //Seu código aqui, manipule a variável sem alterar o nome dela.
-  let sortDecrescente = req4decrscente; //Seu código aqui, manipule a variável sem alterar o nome dela.
+  let sortCrescente = req4crescente.sort((a,b) => a-b); //Seu código aqui, manipule a variável sem alterar o nome dela.
+  let sortDecrescente = req4decrescente.sort((a,b) => b-a); //Seu código aqui, manipule a variável sem alterar o nome dela.
 
 
   req4Crescente.innerHTML = `Sort Crescente[ ${sortCrescente} ]`;//NÃO ALTERAR!
-  req4Decrescente.innerHTML = `Sort decresencete [ ${sortDecrescente} ]`;//NÃO ALTERAR!
+  req4Decrescente.innerHTML = `Sort Decrescente [ ${sortDecrescente} ]`;//NÃO ALTERAR!
 }
 
 
 // Requisito 5
 function arrayPrint() {
+  console.log(historicoDeResultado);
   //Seu código aqui
-
-  req5.innerHTML = `Todas os valores ${historicoDeResultado}`//NÃO ALTERAR!
+  req5.innerHTML = `Todos os valores ${historicoDeResultado}`//NÃO ALTERAR!
 }
 
 
 // Requisito 6
 function conditionCase() {
-  //Seu código aqui, descomente para usar a estrutura declarada.
-/*   if () {
-    //Seu código aqui
-
-    requisito6 = 'maior ou igual a 20';//NÃO ALTERAR!
-    req6.innerHTML = `Condicional if else: ${requisito6}`;//NÃO ALTERAR!  
-  } else {
-    //Seu código aqui
-
-    requisito6 = 'menor que 20';//NÃO ALTERAR!
-    req6.innerHTML = `Condicional if else: ${requisito6}`;//NÃO ALTERAR!
-  } */
+let maior20 = historicoDeResultado[(historicoDeResultado.length)-1]//Seu código aqui, descomente para usar a estrutura declarada.
+if ( maior20 >= 20) {
+  //Seu código aqui
+  requisito6 = 'maior ou igual a 20';//NÃO ALTERAR!
+  req6.innerHTML = `Condicional if else: ${requisito6}`;//NÃO ALTERAR!  
+} else {
+  //Seu código aqui
+  requisito6 = 'menor que 20';//NÃO ALTERAR!
+  req6.innerHTML = `Condicional if else: ${requisito6}`;//NÃO ALTERAR!
+  }
 }
 
 
 // Requisito 7
 function intermediateNumbers() {
   let numeros = [];//NÃO ALTERAR!
-
-  //Seu código aquidescomente para usar a estrutura declarada.
-/*   for () { //Seu código aqui
-    if () {//Seu código aqui
-      numeros //Seu código aqui, manipule a variável sem alterar o nome dela.
-    }
-  } */
+  //Seu código aqui descomente para usar a estrutura declarada.
+for (let i = 0 ; i < historicoDeResultado.length ; i++) { //Seu código aqui
+  if ( historicoDeResultado[i] >= 10 && historicoDeResultado[i] <= 20) {//Seu código aqui
+    numeros.push(historicoDeResultado[i]) //Seu código aqui, manipule a variável sem alterar o nome dela.
+  }
+}
   return req7.innerHTML = `Numeros entre 10 e 20: ${numeros}`;//NÃO ALTERAR!
 };
 
@@ -552,7 +542,7 @@ function confirma() {
     historicoDeResultado.push(resposta);
     requisito3 = [...historicoDeResultado];
     req4crescente = [...historicoDeResultado];
-    req4decrscente = [...historicoDeResultado];
+    req4decrescente = [...historicoDeResultado];
     arrayHistorico.innerHTML = `Histórico = [ ${historicoDeResultado} ];`;
     quantity();
     firstLastPosition();
